@@ -1,0 +1,56 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.example.sneaker_maniac"
+        minSdk 26
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+        vectorDrawables.useSupportLibrary true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.lifecycle:lifecycle-common-java8:2.4.1'
+
+    // UI
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation rootProject.ext.appCompat
+    implementation rootProject.ext.material
+    implementation rootProject.ext.constraint
+
+    // Test
+    testImplementation rootProject.ext.junit
+    androidTestImplementation rootProject.ext.testRunner
+    androidTestImplementation rootProject.ext.espresso
+
+    // Rest
+    implementation rootProject.ext.retrofit
+    implementation rootProject.ext.gsonConverter
+}
