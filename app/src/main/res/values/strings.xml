@@ -6,4 +6,8 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="log_in">Log In</string>
+    <string name="phone">Phone number</string>
+    <string name="register">Register</string>
+    <string name="are_searching">Ищете что-то конкретное?</string>
+    <string name="cart">Корзина:</string>
 </resources>
