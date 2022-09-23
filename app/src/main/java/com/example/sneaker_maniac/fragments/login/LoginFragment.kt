@@ -5,7 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.sneaker_maniac.Properties
 import com.example.sneaker_maniac.databinding.FragmentLoginBinding
+import com.example.sneaker_maniac.fragments.main.MainFragment
+import com.example.sneaker_maniac.fragments.registration.RegistrationFragment
 
 class LoginFragment : Fragment() {
 
@@ -23,7 +26,31 @@ class LoginFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        
+        binding.btnLogin.setOnClickListener {
+            if (binding.etEmail.text?.isNotEmpty() == true && binding.etPassword.text?.isNotEmpty() == true) {
+                requireActivity()
+                    .supportFragmentManager
+                    .beginTransaction()
+                    .replace(
+                        Properties.containerId,
+                        MainFragment(),
+                        MainFragment::javaClass.name
+                    )
+                    .commit()
+            }
+        }
+
+        binding.btnGoToRegistration.setOnClickListener {
+            requireActivity()
+                .supportFragmentManager
+                .beginTransaction()
+                .replace(
+                    Properties.containerId,
+                    RegistrationFragment(),
+                    RegistrationFragment::javaClass.name
+                )
+                .commit()
+        }
     }
 
     override fun onDestroyView() {

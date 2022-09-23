@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.kapt'
 }
 
 android {
@@ -54,4 +55,8 @@ dependencies {
     // Rest
     implementation rootProject.ext.retrofit
     implementation rootProject.ext.gsonConverter
+
+    // Coroutines
+    implementation rootProject.ext.coroutines
+    implementation rootProject.ext.coroutinesAndroid
 }

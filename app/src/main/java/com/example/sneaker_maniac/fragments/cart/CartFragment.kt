@@ -1,15 +1,15 @@
-package com.example.sneaker_maniac.fragments.registration
+package com.example.sneaker_maniac.fragments.cart
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.sneaker_maniac.databinding.FragmentRegistrationBinding
+import com.example.sneaker_maniac.databinding.FragmentCartBinding
 
-class RegistrationFragment : Fragment() {
+class CartFragment : Fragment() {
 
-    private var _binding: FragmentRegistrationBinding? = null
+    private var _binding: FragmentCartBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -17,13 +17,15 @@ class RegistrationFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentRegistrationBinding.inflate(layoutInflater)
+        _binding = FragmentCartBinding.inflate(layoutInflater)
         return binding.root
     }
 
     override fun onStart() {
         super.onStart()
-
+        binding.backArrow.setOnClickListener {
+            requireActivity().supportFragmentManager.popBackStack()
+        }
     }
 
     override fun onDestroyView() {

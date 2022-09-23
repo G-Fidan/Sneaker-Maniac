@@ -1,6 +1,9 @@
 package com.example.sneaker_maniac
 
+import android.content.Context
 import android.os.Bundle
+import android.util.AttributeSet
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sneaker_maniac.databinding.ActivityMainBinding
 import com.example.sneaker_maniac.fragments.login.LoginFragment
@@ -17,6 +20,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
 
+    override fun onCreateView(name: String, context: Context, attrs: AttributeSet): View? {
+        Properties.containerId = binding.mainContainer.id
+        return super.onCreateView(name, context, attrs)
+    }
+
     override fun onStart() {
         super.onStart()
         if (getSharedPreferences(getString(R.string.app_name), MODE_PRIVATE).getString(
@@ -27,7 +35,7 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager
                 .beginTransaction()
                 .add(
-                    binding.mainContainer.id,
+                    Properties.containerId,
                     LoginFragment(),
                     LoginFragment::javaClass.name
                 )
@@ -37,7 +45,7 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager
                 .beginTransaction()
                 .add(
-                    binding.mainContainer.id,
+                    Properties.containerId,
                     MainFragment(),
                     MainFragment::javaClass.name
                 )
