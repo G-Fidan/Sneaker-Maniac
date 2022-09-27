@@ -19,31 +19,44 @@
             android:id="@+id/backArrow"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/ic_arrow"
-            app:tint="@color/black"
-            android:layout_margin="20dp" />
+            app:tint="@color/black" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:textColor="@color/white"
-            android:textSize="35sp"
-            android:text="@string/your_order"
-            android:fontFamily="@font/spectral_bold"
             android:layout_margin="20dp"
+            android:fontFamily="@font/spectral_bold"
             android:gravity="end"
-            android:paddingHorizontal="16dp" />
+            android:paddingHorizontal="16dp"
+            android:text="@string/your_order"
+            android:textColor="@color/white"
+            android:textSize="35sp" />
 
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/sneaksCarts"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_gravity="center"
-        android:layout_weight="2"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        tools:listitem="@layout/sneak_cart_cell" />
+        android:layout_weight="2">
+
+        <ProgressBar
+            android:id="@+id/contentLoader"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:theme="@style/Theme.SneakerManiac"
+            android:visibility="gone" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/sneaksCarts"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            tools:listitem="@layout/sneak_cart_cell" />
+    </FrameLayout>
 
     <LinearLayout
         android:id="@+id/cartLayout"
@@ -56,12 +69,12 @@
             android:id="@+id/amount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/amount"
             android:fontFamily="@font/spectral_bold"
-            android:textSize="25sp"
-            android:textColor="@color/black"
             android:paddingHorizontal="30dp"
-            android:paddingVertical="10dp" />
+            android:paddingVertical="10dp"
+            android:text="@string/amount"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnOrder"

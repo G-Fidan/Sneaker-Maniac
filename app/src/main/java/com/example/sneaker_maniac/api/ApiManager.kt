@@ -36,7 +36,7 @@ object ApiManager {
             .create()
         retrofit = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create(gson))
-            .baseUrl("http://a91745zj.beget.tech/api/v1/")
+            .baseUrl("http://n931333e.beget.tech/api/v1/")
             .client(initOkHttpClient())
             .build()
 

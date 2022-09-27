@@ -15,4 +15,13 @@
     <string name="plus">+</string>
     <string name="create_order">Перейти к оформлению заказа</string>
     <string name="amount">Итого:</string>
+    <string name="number_card">Номер карты</string>
+    <string name="date_card">Срок действия</string>
+    <string name="cvc_card">CVV/CVC</string>
+    <string name="name_owner_card">ФИ владельца карты</string>
+    <string name="full_address">Полный адрес</string>
+    <string name="index_address">Индекс</string>
+    <string name="address">Адрес</string>
+    <string name="payment_data">Платежные данные</string>
+    <string name="save">Сохранить</string>
 </resources>

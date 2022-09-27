@@ -27,7 +27,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        if (getSharedPreferences(getString(R.string.app_name), MODE_PRIVATE).getString(
+        if (getSharedPreferences(
+                App.appContext.getString(R.string.app_name),
+                MODE_PRIVATE
+            ).getString(
                 "token",
                 ""
             ) == ""

@@ -6,9 +6,12 @@
     android:padding="8dp">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="200dp"
         android:layout_height="220dp"
         android:layout_gravity="center"
+        android:clickable="true"
+        android:focusable="true"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="10dp"
         app:cardElevation="0dp">
@@ -28,14 +31,15 @@
                 app:srcCompat="@drawable/ic_sneaker" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/sneakName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:fontFamily="@font/spectral_bold"
                 android:gravity="center"
                 android:text="Наименование товара"
                 android:textColor="@color/black"
-                android:textSize="18sp"
-                android:fontFamily="@font/spectral_bold" />
+                android:textSize="18sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -44,6 +48,7 @@
                 android:orientation="horizontal">
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/countMinus"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center_vertical|start"
@@ -57,11 +62,11 @@
                     android:textSize="25sp" />
 
                 <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/sneakPrice"
+                    android:id="@+id/sneakCount"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:layout_weight="1"
                     android:fontFamily="@font/spectral_bold"
                     android:gravity="center"
                     android:paddingHorizontal="10dp"
@@ -70,13 +75,14 @@
                     android:textSize="18sp" />
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/countPlus"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:clickable="true"
-                    android:focusable="true"
                     android:layout_gravity="center_vertical|end"
                     android:background="@drawable/border_stroke_text_view"
                     android:backgroundTint="@color/blue"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:gravity="center"
                     android:text="@string/plus"
                     android:textColor="@color/black"

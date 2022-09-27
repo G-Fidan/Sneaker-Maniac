@@ -2,15 +2,18 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:padding="8dp"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:padding="8dp">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="160dp"
         android:layout_height="160dp"
         android:layout_gravity="center"
-        app:cardCornerRadius="10dp"
+        android:clickable="true"
+        android:focusable="true"
         app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="10dp"
         app:cardElevation="0dp">
 
         <LinearLayout
@@ -31,9 +34,9 @@
                 android:id="@+id/sneakPrice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="sdvsdvsdv"
-                android:gravity="center"
                 android:fontFamily="@font/spectral_bold"
+                android:gravity="center"
+                android:text="sdvsdvsdv"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
         </LinearLayout>
